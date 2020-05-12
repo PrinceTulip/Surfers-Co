@@ -24,7 +24,7 @@ const plumber = require('gulp-plumber');
 const browserSync = require('browser-sync').create();
 const source = require("vinyl-source-stream");
 const buffer = require("vinyl-buffer");
-const spritesmith = require('gulp.spritesmith'); // npm install gulp.spritesmith
+// const spritesmith = require('gulp.spritesmith'); // npm install gulp.spritesmith
 // const imagemin = require('gulp-imagemin');
 
 const config = {
@@ -92,14 +92,14 @@ return(
 )
 }
 
-function spritesPng() {
-  const spriteData = gulp.src(paths.src + 'img/iconsSprite/*.png').pipe(spritesmith({
-    imgName: 'sprite.png',
-    cssName: 'sprite.css',
-    padding: 25
-  }));
-  return spriteData.pipe(gulp.dest(paths.build + 'icons'));
-}
+// function spritesPng() {
+//   const spriteData = gulp.src(paths.src + 'img/iconsSprite/*.png').pipe(spritesmith({
+//     imgName: 'sprite.png',
+//     cssName: 'sprite.css',
+//     padding: 25
+//   }));
+//   return spriteData.pipe(gulp.dest(paths.build + 'icons'));
+// }
 
 function htmls() {
   return gulp.src(paths.src + '*.html')
@@ -132,7 +132,6 @@ function watch() {
   gulp.watch(paths.src + '*.html', htmls);
   gulp.watch(paths.src + 'img/*', img);
   gulp.watch(paths.src + 'favicon/*', favicon);
-  gulp.watch(paths.src + 'img/iconsSprite/*', spritesPng);
 }
 
 function serve() {
@@ -153,7 +152,7 @@ exports.img = img;
 exports.favicon = favicon;
 exports.fonts = fonts;
 exports.svgSpriteBuild = svgSpriteBuild;
-exports.spritesPng = spritesPng;
+// exports.spritesPng = spritesPng;
 
 
 
@@ -165,12 +164,12 @@ gulp.task('build', gulp.series(
     img,
     fonts,
     favicon,
-    spritesPng
-    // gulp.parallel(styles, scripts, htmls, img, fonts, spritesPng)
+    svgSpriteBuild
+    // gulp.parallel(styles, scripts, htmls, img, fonts, svgSpriteBuild)
 ));
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, scripts, htmls, img, svgSpriteBuild, fonts, favicon, spritesPng),
+    gulp.parallel(styles, scripts, htmls, img, svgSpriteBuild, fonts, favicon, svgSpriteBuild),
     gulp.parallel(watch, serve)
 ));
