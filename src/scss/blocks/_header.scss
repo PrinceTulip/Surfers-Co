@@ -1,7 +1,13 @@
-.header-navigation__list {
-    display: flex;
+.wrapper-bg {
+  background: url("../img/wrapper-bg.jpg");
 }
 
-.wrapper-bg {
-    background: url("../img/wrapper-bg.jpg");
+.header {
+  padding: 35px 0 145px 0;
 }
+
+.row-header {
+  justify-content: space-between;
+  align-items: center;
+}
+
