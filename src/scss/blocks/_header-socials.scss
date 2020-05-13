@@ -2,33 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  //@include laptop {
-  //  position: fixed;
-  //  //top: 65%;
-  //  //right: -100%;
-  //  //bottom: 0;
-  //  right: -100%;
-  //  //justify-content: flex-start;
-  //  //align-items: flex-start;
-  //  z-index: 5;
-  //  transition: 0.6s;
-  //  //text-align: center;
-  //}
-  //
-  //&--active {
-  //  right: 27%;
-  //}
-
-  //@include phones {
-  //  bottom: 0;
-  //}
-  //
-  //@include small-phones {
-  //  bottom: 0;
-  //}
 }
-
 
 .header-socials__link {
   display: flex;
