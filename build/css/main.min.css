@@ -514,6 +514,11 @@ img {
   font-weight: 300;
   text-align: center; }
 
+.row-title {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
 .header__burger {
   display: none; }
   @media (max-width: 992px) {
@@ -634,6 +639,9 @@ body.lock {
   justify-content: center;
   align-items: center; }
 
+.header-socials__icon {
+  fill: #fff; }
+
 .header-socials__link {
   display: flex;
   align-items: center;
@@ -648,12 +656,9 @@ body.lock {
   .header-socials__link:hover {
     background-color: #fff;
     transition: 0.3s; }
-    .header-socials__link:hover .header-socials__icon {
+    .header-socials__link:hover svg {
       fill: #000;
       transition: 0.3s; }
-
-.header-socials__icon {
-  fill: #fff; }
 
 .header-socials__icon--fb {
   width: 8px;
@@ -762,6 +767,9 @@ body.lock {
 .promo-slider__tabs {
   margin-bottom: 30px; }
 
+.promo-slider__tabs-catalog {
+  display: none; }
+
 .promo-slider___tab {
   font-family: "RalewayBold", sans-serif;
   font-size: 14px;
@@ -817,7 +825,9 @@ body.lock {
   min-width: 0;
   margin-top: 150px;
   max-width: 1030px;
-  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.34); }
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.34);
+  top: 0;
+  left: 0; }
 
 .promo-slider .slick-arrow {
   position: absolute;
@@ -882,12 +892,14 @@ body.lock {
 
 .promo-slider__item .promo-slider__decor-text {
   position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 50px;
-  color: #a0a0a0;
-  font-family: "Helvetica", sans-serif;
-  transform: rotate(180deg); }
+  top: 241px;
+  right: -282px;
+  font-size: 127px;
+  color: rgba(0, 0, 0, 0.1);
+  font-family: "MontserratBold", sans-serif;
+  transform: rotate(-90deg);
+  text-transform: uppercase;
+  letter-spacing: 12.7px; }
 
 .slick-list {
   overflow: hidden; }

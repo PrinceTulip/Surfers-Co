@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.header-socials__icon {
+  fill: $white;
+}
+
 .header-socials__link {
   display: flex;
   align-items: center;
@@ -19,15 +23,11 @@
   &:hover {
     background-color: $white;
     transition: 0.3s;
-    .header-socials__icon {
+    svg {
       fill: $black;
       transition: 0.3s;
     }
   }
-}
-
-.header-socials__icon {
-  fill: $white;
 }
 
 .header-socials__icon--fb {

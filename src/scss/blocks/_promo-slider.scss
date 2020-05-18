@@ -4,6 +4,8 @@
   margin-top: 150px;
   max-width: 1030px;
   box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.34);
+  top: 0;
+  left: 0;
 }
 
 .promo-slider .slick-arrow {
@@ -79,12 +81,14 @@
 
 .promo-slider__item .promo-slider__decor-text {
   position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 50px;
-  color: #a0a0a0;
-  font-family: $helvetica;
-  transform: rotate(180deg);
+  top: 241px;
+  right: -282px;
+  font-size: 127px;
+  color: rgba(0,0,0, 0.1);
+  font-family: $montBold;
+  transform: rotate(-90deg);
+  text-transform: uppercase;
+  letter-spacing: 12.7px;
 }
 
 
