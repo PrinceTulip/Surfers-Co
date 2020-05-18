@@ -1,0 +1,28 @@
+.promo {
+  padding-bottom: 300px;
+}
+
+.row-promo {
+  justify-content: center;
+}
+
+.promo__title-h2 {
+  font-family: $playFair;
+  font-size: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.promo__sub-title-h4 {
+  font-family: $playFair;
+  font-size: 24px;
+  color: $white;
+  font-weight: 300;
+  text-align: center;
+}
+
+.row-title {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

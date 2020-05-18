@@ -51,3 +51,18 @@ img {
 .row {
   display: flex;
 }
+
+.btn {
+  display: inline-block;
+  font-family: $montBold;
+  padding: 14px 32px;
+  background: $aqua;
+  color: $white;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 300;
+  cursor: pointer;
+  border: transparent;
+  transition: 0.3s;
+}

@@ -24,8 +24,8 @@ const plumber = require('gulp-plumber');
 const browserSync = require('browser-sync').create();
 const source = require("vinyl-source-stream");
 const buffer = require("vinyl-buffer");
-// const spritesmith = require('gulp.spritesmith'); // npm install gulp.spritesmith
-// const imagemin = require('gulp-imagemin');
+const spritesmith = require('gulp.spritesmith');
+const imagemin = require('gulp-imagemin');
 
 const config = {
   mode: {
@@ -41,29 +41,27 @@ const paths =  {
   //build: 'D:/xampp/htdocs/test/' // xampp local server
 };
 
-
 function svgSpriteBuild() {
   return gulp.src(paths.src + 'icons/*.svg')
   // минифицируем svg
-    .pipe(svgmin({
-      js2svg: {
-        pretty: true
-      }
-    }))
+  //    .pipe(svgmin({
+  //      js2svg: {
+  //        pretty: true
+  //      }
+  //    }))
     // удалить все атрибуты fill, style and stroke в фигурах
-    .pipe(cheerio({
-      run: function($) {
-        $('[fill]').removeAttr('fill');
-        $('[stroke]').removeAttr('stroke');
-        $('[style]').removeAttr('style');
-      },
-      parserOptions: {
-        xmlMode: true
-      }
-    }))
+     .pipe(cheerio({
+       run: function($) {
+         $('[fill]').removeAttr('fill');
+         $('[stroke]').removeAttr('stroke');
+         $('[style]').removeAttr('style');
+       },
+       parserOptions: {
+         xmlMode: true
+       }
+     }))
     // cheerio плагин заменит, если появилась, скобка '&gt;', на нормальную.
-    .pipe(replace('&gt;', '>'))
-    // build svg sprite
+     .pipe(replace('&gt;', '>'))
     .pipe(svgSprite(config))
     .pipe(gulp.dest(paths.build + 'icons'));
 };
@@ -87,19 +85,19 @@ return(
     // Turn it into a buffer!
     .pipe(buffer())
     // And uglify
-    .pipe(uglify())
+    //.pipe(uglify())
   .pipe(gulp.dest(paths.build + 'js/'))
 )
 }
 
-// function spritesPng() {
-//   const spriteData = gulp.src(paths.src + 'img/iconsSprite/*.png').pipe(spritesmith({
-//     imgName: 'sprite.png',
-//     cssName: 'sprite.css',
-//     padding: 25
-//   }));
-//   return spriteData.pipe(gulp.dest(paths.build + 'icons'));
-// }
+function spritesPng() {
+  const spriteData = gulp.src(paths.src + 'img/iconsSprite/*.png').pipe(spritesmith({
+    imgName: 'sprite.png',
+    cssName: 'sprite.css',
+    padding: 25
+  }));
+  return spriteData.pipe(gulp.dest(paths.build + 'icons'));
+}
 
 function htmls() {
   return gulp.src(paths.src + '*.html')
@@ -128,7 +126,7 @@ function clean() {
 
 function watch() {
   gulp.watch(paths.src + 'scss/**/*.scss', styles);
-  gulp.watch(paths.src + 'js/*.js', scripts);
+  gulp.watch(paths.src + 'js/**/*.js', scripts);
   gulp.watch(paths.src + '*.html', htmls);
   gulp.watch(paths.src + 'img/*', img);
   gulp.watch(paths.src + 'favicon/*', favicon);
@@ -152,9 +150,7 @@ exports.img = img;
 exports.favicon = favicon;
 exports.fonts = fonts;
 exports.svgSpriteBuild = svgSpriteBuild;
-// exports.spritesPng = spritesPng;
-
-
+exports.spritesPng = spritesPng;
 
 gulp.task('build', gulp.series(
     clean,
@@ -164,12 +160,12 @@ gulp.task('build', gulp.series(
     img,
     fonts,
     favicon,
-    svgSpriteBuild
-    // gulp.parallel(styles, scripts, htmls, img, fonts, svgSpriteBuild)
+    svgSpriteBuild,
+    gulp.parallel(styles, scripts, htmls, img, fonts, svgSpriteBuild, spritesPng)
 ));
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, scripts, htmls, img, svgSpriteBuild, fonts, favicon, svgSpriteBuild),
+    gulp.parallel(styles, scripts, htmls, img, svgSpriteBuild, spritesPng, fonts, favicon,),
     gulp.parallel(watch, serve)
 ));

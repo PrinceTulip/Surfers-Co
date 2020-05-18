@@ -1,5 +1,5 @@
 .wrapper-bg {
-  background: url("../img/wrapper-bg.jpg");
+  background: url("../img/wrapper-bg.jpg") no-repeat;
 }
 
 .header {
@@ -10,4 +10,6 @@
   justify-content: space-between;
   align-items: center;
 }
+
+
 
