@@ -13,7 +13,7 @@
 
 .promo-slider___tab {
   font-family: $ralewayBold;
-  font-size: 14px;
+  font-size: rem(14px);
   text-transform: uppercase;
   margin-right: 30px;
   color: #a0a0a0;
@@ -60,7 +60,7 @@
   position: relative;
   color: #00b0ff;
   font-family: $montBold;
-  font-size: 14px;
+  font-size: rem(14px);
 
   &:after {
     position: absolute;

@@ -22,6 +22,10 @@
   }
 }
 
+@function rem($p) {
+  @return $p / 16px+0rem;
+}
+
 @mixin placeholder {
   &::-webkit-input-placeholder { @content; }
   &:-moz-placeholder           { @content; }

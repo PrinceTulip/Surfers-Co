@@ -3,6 +3,18 @@
   box-sizing: inherit;
 }
 
+html {
+  font-size: 16px;
+
+  @include tablets {
+    font-size: 14px;
+  }
+
+  @include phones {
+    font-size: 13px;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -58,7 +70,7 @@ img {
   padding: 14px 32px;
   background: $aqua;
   color: $white;
-  font-size: 14px;
+  font-size: rem(14px);
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 300;

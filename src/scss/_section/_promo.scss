@@ -1,5 +1,24 @@
 .promo {
-  padding-bottom: 300px;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.promo__large-letter {
+  text-align: center;
+}
+
+.promo__large-letter-text {
+  display: inline-block;
+  color: rgba(0,0,0, 0.03);
+  font-family: $montBold;
+  text-transform: uppercase;
+  font-size: rem(192px);
+  transform: translateY(55px);
+
+  @media (max-width: 650px) {
+    font-size: rem(100px);
+    transform: translateY(17px);
+  }
 }
 
 .row-promo {

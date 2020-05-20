@@ -23,6 +23,7 @@ $(document).ready(function(){
     slidesToScroll: 1,
     autoplaySpeed: 3000,
   });
+
 });
 
 

@@ -3,7 +3,7 @@
   min-width: 0;
   margin-top: 150px;
   max-width: 1030px;
-  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.34);
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.3);
   top: 0;
   left: 0;
 }
@@ -81,14 +81,18 @@
 
 .promo-slider__item .promo-slider__decor-text {
   position: absolute;
-  top: 241px;
-  right: -282px;
-  font-size: 127px;
-  color: rgba(0,0,0, 0.1);
+  font-size: rem(127px);
+  color: rgba(0,0,0, 0.03);
   font-family: $montBold;
   transform: rotate(-90deg);
   text-transform: uppercase;
-  letter-spacing: 12.7px;
+  top: 210px;
+  right: -245px;
+
+  @include small-phones {
+    top: 184px;
+    right: -210px;
+  }
 }
 
 
