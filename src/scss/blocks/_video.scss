@@ -1,0 +1,81 @@
+.about-us__video {
+  position: relative;
+  margin-top: auto;
+  cursor: pointer;
+
+  &:hover {
+    .about-us__video-btn {
+      border: 20px solid transparent; border-left: 30px solid $aqua;
+      transition: 0.2s;
+    }
+  }
+
+  .about-us__video-btn {
+    display: none;
+  }
+}
+
+.about-us__video-media {
+  border: none;
+  width: 500px;
+  min-height: 300px;
+  background-color: $black;
+
+  @media (max-width: 900px) {
+    width: 443px;
+  }
+
+  @include phones {
+    width: 323px;
+  }
+}
+
+.about-us__video-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border: 20px solid transparent; border-left: 30px solid $white;
+  border-radius: 5px;
+  font-size: 0;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+
+  &:after {
+    position: absolute;
+    content: '';
+    width: 90px;
+    height: 90px;
+    top: -45px;
+    left: -62px;
+    border: 3px solid $white;
+    border-radius: 50%;
+    background: transparent;
+  }
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 140px;
+    height: 140px;
+    top: -70px;
+    left: -87px;
+    border: 1px solid $white;
+    border-radius: 50%;
+    background: transparent;
+  }
+}
+
+.about-us__video--enabled {
+
+  .about-us__video-btn {
+    display: block;
+  }
+}
+
+picture {
+  color: white;
+  font-size: 0;
+}

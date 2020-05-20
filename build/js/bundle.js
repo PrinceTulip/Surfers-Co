@@ -14625,11 +14625,14 @@ require('./plugins/slider.js');
 
 var burger = require('./plugins/burger.js');
 
+var video = require('./plugins/video.js');
+
 window.addEventListener('DOMContentLoaded', function () {
   burger();
+  video();
 });
 
-},{"./plugins/burger.js":5,"./plugins/slider.js":6,"regenerator-runtime":2}],5:[function(require,module,exports){
+},{"./plugins/burger.js":5,"./plugins/slider.js":6,"./plugins/video.js":8,"regenerator-runtime":2}],5:[function(require,module,exports){
 "use strict";
 
 var $ = require('jquery');
@@ -14747,6 +14750,57 @@ module.exports = function (slide) {
   };
 
   bindTabs('.promo-slider___tab', '.promo-slider__tabs-catalog', 'promo-slider___tab--active');
+};
+
+},{}],8:[function(require,module,exports){
+"use strict";
+
+module.exports = function () {
+  function findVideos() {
+    var videos = document.querySelectorAll('.about-us__video');
+
+    for (var i = 0; i < videos.length; i++) {
+      setupVideo(videos[i]);
+    }
+  }
+
+  function setupVideo(video) {
+    var link = video.querySelector('.about-us__video-link');
+    var media = video.querySelector('.about-us__video-media');
+    var button = video.querySelector('.about-us__video-btn');
+    var id = parseMediaURL(media);
+    video.addEventListener('click', function () {
+      var iframe = createIframe(id);
+      link.remove();
+      button.remove();
+      video.appendChild(iframe);
+    });
+    link.removeAttribute('href');
+    video.classList.add('about-us__video--enabled');
+  }
+
+  function parseMediaURL(media) {
+    var regexp = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i;
+    var url = media.src;
+    var match = url.match(regexp);
+    return match[1];
+  }
+
+  function createIframe(id) {
+    var iframe = document.createElement('iframe');
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('allow', 'autoplay');
+    iframe.setAttribute('src', generateURL(id));
+    iframe.classList.add('about-us__video-media');
+    return iframe;
+  }
+
+  function generateURL(id) {
+    var query = '?rel=0&showinfo=0&autoplay=1';
+    return 'https://www.youtube.com/embed/' + id + query;
+  }
+
+  findVideos();
 };
 
 },{}]},{},[4]);
