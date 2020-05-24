@@ -7,16 +7,12 @@ module.exports = (slide) => {
     let counter = 0;
 
     document.querySelectorAll('.promo-slider__tabs-item').forEach((item, index) => {
-      console.log(index, counter)
       if (index === counter) {
         item.style.display = 'block';
         counter += 3;
-        console.log(index)
       }
 
     })
-
-    console.log(document.querySelectorAll('promo-slider__tabs-item'))
 
     trigger.forEach((item, i) => {
       item.addEventListener('click', (e) => {
@@ -37,7 +33,6 @@ module.exports = (slide) => {
     };
 
     const showTabs = (i) => {
-      console.log(child[i])
       trigger[i].classList.add(active);
       child[i].style.display = 'block';
     }

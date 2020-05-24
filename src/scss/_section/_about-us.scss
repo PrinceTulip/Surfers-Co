@@ -13,6 +13,10 @@
   @media (max-width: 900px) {
     padding-top: 50px;
   }
+
+  @include tablets {
+    padding-bottom: 0;
+  }
 }
 
 .about-us__desc {
@@ -81,7 +85,6 @@
   font-family: $playFair;
   margin-bottom: 35px;
   max-width: 340px;
-  //line-height: 38px;
 }
 
 .about-us__desc-link {

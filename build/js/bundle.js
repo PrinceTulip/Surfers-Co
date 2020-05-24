@@ -14621,7 +14621,9 @@ try {
 
 require('regenerator-runtime');
 
-require('./plugins/slider.js');
+require('./plugins/promo-slider.js');
+
+require('./plugins/our-team-slider.js');
 
 var burger = require('./plugins/burger.js');
 
@@ -14632,7 +14634,7 @@ window.addEventListener('DOMContentLoaded', function () {
   video();
 });
 
-},{"./plugins/burger.js":5,"./plugins/slider.js":6,"./plugins/video.js":8,"regenerator-runtime":2}],5:[function(require,module,exports){
+},{"./plugins/burger.js":5,"./plugins/our-team-slider.js":6,"./plugins/promo-slider.js":7,"./plugins/video.js":9,"regenerator-runtime":2}],5:[function(require,module,exports){
 "use strict";
 
 var $ = require('jquery');
@@ -14664,6 +14666,47 @@ var slick = require('slick-carousel');
 
 var $ = require('jquery');
 
+$(document).ready(function () {
+  $('.our-team__slider').slick({
+    arrows: true,
+    dots: false,
+    autoplay: false,
+    pauseOnFocus: true,
+    pauseOnHover: true,
+    pauseOnDotsHover: true,
+    waitForAnimate: false,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    autoplaySpeed: 3000,
+    responsive: [{
+      breakpoint: 1182,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3
+      }
+    }, {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    }, {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }]
+  });
+});
+
+},{"jquery":1,"slick-carousel":3}],7:[function(require,module,exports){
+"use strict";
+
+var slick = require('slick-carousel');
+
+var $ = require('jquery');
+
 var tabs = require('./tabs.js');
 
 $(document).ready(function () {
@@ -14688,7 +14731,7 @@ $(document).ready(function () {
   });
 });
 
-},{"./tabs.js":7,"jquery":1,"slick-carousel":3}],7:[function(require,module,exports){
+},{"./tabs.js":8,"jquery":1,"slick-carousel":3}],8:[function(require,module,exports){
 "use strict";
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
@@ -14713,15 +14756,11 @@ module.exports = function (slide) {
 
     var counter = 0;
     document.querySelectorAll('.promo-slider__tabs-item').forEach(function (item, index) {
-      console.log(index, counter);
-
       if (index === counter) {
         item.style.display = 'block';
         counter += 3;
-        console.log(index);
       }
     });
-    console.log(document.querySelectorAll('promo-slider__tabs-item'));
     trigger.forEach(function (item, i) {
       item.addEventListener('click', function (e) {
         hideTabs();
@@ -14740,7 +14779,6 @@ module.exports = function (slide) {
     };
 
     var showTabs = function showTabs(i) {
-      console.log(child[i]);
       trigger[i].classList.add(active);
       child[i].style.display = 'block';
     };
@@ -14752,7 +14790,7 @@ module.exports = function (slide) {
   bindTabs('.promo-slider___tab', '.promo-slider__tabs-catalog', 'promo-slider___tab--active');
 };
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 "use strict";
 
 module.exports = function () {
