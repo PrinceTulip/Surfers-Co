@@ -1,5 +1,9 @@
 .our-team {
   padding-bottom: 200px;
+
+  @include phones {
+    padding-bottom: 50px;
+  }
 }
 
 .our-team__slider {
