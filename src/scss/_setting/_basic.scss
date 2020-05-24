@@ -38,6 +38,7 @@ p {
 
 a {
   text-decoration: none;
+  text-underline: none;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -54,7 +55,7 @@ img {
 }
 
 .container {
-  max-width: 1190px;
+  max-width: 1192px;
   width: 100%;
   padding: 0 10px;
   margin: 0 auto;
@@ -77,4 +78,19 @@ img {
   cursor: pointer;
   border: transparent;
   transition: 0.3s;
+}
+
+.title {
+  color: rgba(0,0,0, 0.03);
+  font-family: $montBold;
+  text-transform: uppercase;
+  font-size: rem(192px);
+  transform: translateY(55px);
+  text-align: center;
+  z-index: -1;
+
+  @media (max-width: 650px) {
+    font-size: rem(100px);
+    transform: translateY(17px);
+  }
 }
