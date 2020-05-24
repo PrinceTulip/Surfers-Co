@@ -504,6 +504,11 @@ img {
   cursor: pointer;
   border: transparent;
   transition: 0.3s; }
+  .btn:hover {
+    background-color: dodgerblue;
+    transition: 0.3s; }
+  .btn:active {
+    color: rgba(255, 255, 255, 0.2); }
 
 .title {
   color: rgba(0, 0, 0, 0.03);
@@ -517,6 +522,25 @@ img {
     .title {
       font-size: 6.25rem;
       transform: translateY(17px); } }
+
+.desc-title {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  font-family: "Montserrat", sans-serif;
+  padding-bottom: 66px; }
+  .desc-title:after, .desc-title:before {
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    content: '';
+    width: 13px;
+    height: 2px;
+    background-color: #000; }
+  .desc-title:after {
+    transform: rotate(45deg); }
+  .desc-title:before {
+    transform: rotate(-45deg); }
 
 @media (max-width: 900px) {
   .row-about-us {
@@ -563,25 +587,6 @@ img {
       max-width: 100%;
       margin-left: 0; } }
 
-.about-us__desc-title {
-  position: relative;
-  text-transform: uppercase;
-  font-size: 1.125rem;
-  font-family: "Montserrat", sans-serif;
-  padding-bottom: 66px; }
-  .about-us__desc-title:after, .about-us__desc-title:before {
-    position: absolute;
-    bottom: 40%;
-    left: 50%;
-    content: '';
-    width: 13px;
-    height: 2px;
-    background-color: #000; }
-  .about-us__desc-title:after {
-    transform: rotate(45deg); }
-  .about-us__desc-title:before {
-    transform: rotate(-45deg); }
-
 .about-us__desc-text {
   font-size: 1.375rem;
   font-family: "PlayFair", sans-serif;
@@ -608,8 +613,55 @@ img {
     .about-us__desc-block {
       align-self: center; } }
 
+.last-updates {
+  padding-bottom: 180px; }
+
+.row-last-updates {
+  justify-content: center;
+  flex-wrap: wrap; }
+  @media (max-width: 490px) {
+    .row-last-updates {
+      flex-direction: column;
+      align-items: center; } }
+
+.last-update__title {
+  text-align: center; }
+
+.last-updates__item {
+  width: 270px;
+  min-height: 344px;
+  margin-right: 30px;
+  margin-bottom: 30px; }
+  @media (max-width: 490px) {
+    .last-updates__item {
+      margin-right: 0; } }
+  .last-updates__item:hover {
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
+    transition: 0.3s; }
+  .last-updates__item:last-child {
+    margin-right: 0; }
+
+.last-updates__text {
+  padding: 27px 20px; }
+
+.last-updates__text-link {
+  font-family: "Raleway", sans-serif;
+  color: #787878;
+  font-size: 1rem; }
+  .last-updates__text-link:hover {
+    color: #0022ff; }
+
+.last-updates__button {
+  text-align: center; }
+
+.last-updates__button-wrap {
+  text-align: center; }
+
 .our-team {
   padding-bottom: 200px; }
+  @media (max-width: 490px) {
+    .our-team {
+      padding-bottom: 50px; } }
 
 .our-team__slider {
   position: relative;

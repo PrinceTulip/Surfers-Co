@@ -78,6 +78,15 @@ img {
   cursor: pointer;
   border: transparent;
   transition: 0.3s;
+
+  &:hover {
+    background-color: dodgerblue;
+    transition: 0.3s;
+  }
+
+  &:active {
+    color: rgba(255,255,255, 0.2)
+  }
 }
 
 .title {
@@ -93,4 +102,32 @@ img {
     font-size: rem(100px);
     transform: translateY(17px);
   }
+}
+
+.desc-title {
+    position: relative;
+    text-transform: uppercase;
+    font-size: rem(18px);
+    font-family: $mont;
+    padding-bottom: 66px;
+
+    &:after,
+    &:before {
+      position: absolute;
+      bottom: 40%;
+      left: 50%;
+      content: '';
+      width: 13px;
+      height: 2px;
+      background-color: $black;
+    }
+
+    &:after {
+      transform: rotate(45deg);
+    }
+
+    &:before {
+      transform: rotate(-45deg);
+    }
+
 }

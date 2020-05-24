@@ -53,33 +53,6 @@
   }
 }
 
-.about-us__desc-title {
-  position: relative;
-  text-transform: uppercase;
-  font-size: rem(18px);
-  font-family: $mont;
-  padding-bottom: 66px;
-
-  &:after,
-  &:before {
-    position: absolute;
-    bottom: 40%;
-    left: 50%;
-    content: '';
-    width: 13px;
-    height: 2px;
-    background-color: $black;
-  }
-
-  &:after {
-    transform: rotate(45deg);
-  }
-
-  &:before {
-    transform: rotate(-45deg);
-  }
-}
-
 .about-us__desc-text {
   font-size: rem(22px);
   font-family: $playFair;
