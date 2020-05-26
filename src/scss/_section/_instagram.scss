@@ -1,0 +1,89 @@
+.instagram_title {
+  font-size: rem(90px);
+  transform: translateY(0);
+  text-align: left;
+  letter-spacing: 7px;
+}
+
+.instagram-left {
+  width: 53%;
+  margin-right: 48px;
+}
+
+.instagram-left__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.instagram-left__item {
+  height: 310px;
+}
+
+.instagram-left__bottom {
+  padding: 15px 20px;
+}
+
+.instagram-left__link {
+  margin-right: 20px;
+  padding-left: 50px;
+  padding-top: 2px;
+  font-size: rem(24px);
+  text-transform: uppercase;
+  color: $aqua;
+  font-family: $robotoCond;
+  background: url("../img/Logo_Instagram.png") 0 0px no-repeat;
+
+  &:hover {
+    color: dodgerblue;
+    transition: 0.3s;
+  }
+}
+
+.instagram-left__email {
+  font-family: $raleway;
+  font-size: rem(16px);
+  color: $black;
+}
+
+.row-instagram-bottom {
+  align-items: center;
+}
+
+.instagram-right__facebook-wrapper {
+  position: relative;
+  padding: 50px 30px;
+  background-color: #385490;
+  z-index: 1;
+
+  &:after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    background-color: #e5e5e5;
+    height: 50%;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.instagram-right__facebook-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: $white;
+  font-size: rem(32px);
+  text-transform: uppercase;
+  font-family: $robotoCond;
+}
+
+.instagram-left__copyright {
+  padding-top: 30px;
+
+  p {
+    font-size: rem(12px);
+    color: #4d4d4d;
+    font-family: $raleway;
+  }
+}
+
+

@@ -613,6 +613,77 @@ img {
     .about-us__desc-block {
       align-self: center; } }
 
+.instagram_title {
+  font-size: 5.625rem;
+  transform: translateY(0);
+  text-align: left;
+  letter-spacing: 7px; }
+
+.instagram-left {
+  width: 53%;
+  margin-right: 48px; }
+
+.instagram-left__wrapper {
+  display: flex;
+  flex-wrap: wrap; }
+
+.instagram-left__item {
+  height: 310px; }
+
+.instagram-left__bottom {
+  padding: 15px 20px; }
+
+.instagram-left__link {
+  margin-right: 20px;
+  padding-left: 50px;
+  padding-top: 2px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #00b0ff;
+  font-family: "RobotoCondensed", sans-serif;
+  background: url("../img/Logo_Instagram.png") 0 0px no-repeat; }
+  .instagram-left__link:hover {
+    color: dodgerblue;
+    transition: 0.3s; }
+
+.instagram-left__email {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  color: #000; }
+
+.row-instagram-bottom {
+  align-items: center; }
+
+.instagram-right__facebook-wrapper {
+  position: relative;
+  padding: 50px 30px;
+  background-color: #385490;
+  z-index: 1; }
+  .instagram-right__facebook-wrapper:after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    background-color: #e5e5e5;
+    height: 50%;
+    width: 100%;
+    z-index: -1; }
+
+.instagram-right__facebook-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: "RobotoCondensed", sans-serif; }
+
+.instagram-left__copyright {
+  padding-top: 30px; }
+  .instagram-left__copyright p {
+    font-size: 0.75rem;
+    color: #4d4d4d;
+    font-family: "Raleway", sans-serif; }
+
 .last-updates {
   padding-bottom: 180px; }
 
