@@ -757,6 +757,46 @@ img {
   justify-content: center;
   align-items: center; }
 
+.footer {
+  background-color: #000;
+  padding: 50px 0 70px 0; }
+
+.row-footer {
+  justify-content: flex-end; }
+
+.footer__list {
+  margin-right: 100px; }
+  .footer__list:last-child {
+    margin-right: 0; }
+
+.footer__list-item {
+  margin-bottom: 20px; }
+
+.footer__list-link {
+  position: relative;
+  color: #fff;
+  font-size: 0.875rem;
+  font-family: "Raleway", sans-serif;
+  transition: 0.3s; }
+  .footer__list-link:after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: yellow; }
+  .footer__list-link:hover {
+    color: yellow;
+    transition: 0.3s; }
+    .footer__list-link:hover:after {
+      width: 100%;
+      transition: 0.5s; }
+
+.footer__list-wrapper {
+  display: flex;
+  margin-bottom: 120px; }
+
 .header__burger {
   display: none; }
   @media (max-width: 992px) {
